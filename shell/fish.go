@@ -20,7 +20,7 @@ func (f Fish) cmd(cmd string) (string, error) {
 }
 
 func (f Fish) MakePrefix(cmd string) string {
-	return cmd + " 1>&2 && "
+	return cmd + " 1>&2\n"
 }
 
 func (f Fish) Aliases(prefix string) (aliases map[string]string, err error) {

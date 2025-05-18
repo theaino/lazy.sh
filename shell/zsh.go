@@ -22,7 +22,7 @@ func (z Zsh) cmd(cmd string) (string, error) {
 }
 
 func (z Zsh) MakePrefix(cmd string) string {
-	return cmd + " 1>&2 && "
+	return cmd + " 1>&2\n"
 }
 
 func (z Zsh) Aliases(prefix string) (aliases map[string]string, err error) {

@@ -22,7 +22,7 @@ func (b Bash) cmd(cmd string) (string, error) {
 }
 
 func (b Bash) MakePrefix(cmd string) string {
-	return cmd + " 1>&2 && "
+	return cmd + " 1>&2\n"
 }
 
 func (b Bash) Aliases(prefix string) (aliases map[string]string, err error) {
