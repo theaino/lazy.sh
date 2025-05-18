@@ -13,10 +13,22 @@ The solution: lazy load that stuff!!1!
 
 ### From source
 
-To install the `lazysh`-binary on your system, simply run:
+First clone the git repo:
+
+~~~sh
+git clone https://github.com/theaino/lazysh
+~~~
+
+And install the `lazysh`-binary:
 
 ~~~sh
 sudo make clean install
+~~~
+
+It can be uninstalled again by:
+
+~~~sh
+sudo make uninstall
 ~~~
 
 ## Getting started
