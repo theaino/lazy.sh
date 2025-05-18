@@ -48,7 +48,7 @@ func (b Bash) Aliases(prefix string) (aliases map[string]string, err error) {
 }
 
 func (b Bash) Functions(prefix string) (functions map[string]string, err error) {
-	functionRegex := regexp.MustCompile(`([^\ \n]+)\ *\(\)\ *\n{\ *((?:\n[\ \t]+.*)+)\n}`)
+	functionRegex := regexp.MustCompile(`([^\ \n]+)\ *\(\)\ *\n{\ *((?:\n[^}].*)+)\n}`)
 
 	rawFunctions, err := b.cmd(prefix + "declare -f")
 	if err != nil {
