@@ -23,7 +23,7 @@ func LoadCache(s shell.Shell) (cache Cache, err error) {
 	os.MkdirAll(cache.RootDir, os.ModePerm)
 
 	cache.ScriptPath = filepath.Join(cache.RootDir, "start"+s.Extension())
-	cache.SumPath = filepath.Join(cache.RootDir, "start" + s.Extension() + ".sum")
+	cache.SumPath = filepath.Join(cache.RootDir, "start"+s.Extension()+".sum")
 	return
 }
 

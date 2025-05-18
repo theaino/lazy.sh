@@ -51,6 +51,8 @@ func getShell() shell.Shell {
 	switch flag.Arg(0) {
 	case "bash":
 		return shell.Bash{}
+	case "zsh":
+		return shell.Zsh{}
 	case "fish":
 		return shell.Fish{}
 	}
