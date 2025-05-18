@@ -19,7 +19,7 @@ type Relations struct {
 }
 
 func Analyze(s shell.Shell, cmd string) (relations Relations, err error) {
-	prefix := cmd + " && "
+	prefix := s.MakePrefix(cmd)
 	before, err := loadEnv(s, "")
 	if err != nil {
 		return

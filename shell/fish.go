@@ -19,6 +19,10 @@ func (f Fish) cmd(cmd string) (string, error) {
 	return strings.Trim(string(out), "\n"), nil
 }
 
+func (f Fish) MakePrefix(cmd string) string {
+	return cmd + " 1>&2 && "
+}
+
 func (f Fish) Aliases(prefix string) (aliases map[string]string, err error) {
 	aliasRegex := regexp.MustCompile(`alias ([^\ ]+) ([^\ ]+)`)
 
