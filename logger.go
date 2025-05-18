@@ -3,7 +3,6 @@ package main
 import (
 	"context"
 	"fmt"
-	"log"
 	"log/slog"
 	"os"
 )
@@ -11,13 +10,6 @@ import (
 func init() {
 	slog.SetDefault(slog.New(NewLogHandler(os.Stderr, slog.LevelInfo)))
 }
-
-func handle(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
 
 type LogHandler struct {
 	writer *os.File
@@ -47,10 +39,9 @@ func (h *LogHandler) Handle(_ context.Context, r slog.Record) error {
 }
 
 func (h *LogHandler) WithAttrs(_ []slog.Attr) slog.Handler {
-	return h // Ignore attributes in this simple example
+	return h // ignored
 }
 
 func (h *LogHandler) WithGroup(_ string) slog.Handler {
-	return h // No group support in this minimal handler
+	return h // ignored
 }
-
