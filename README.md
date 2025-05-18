@@ -7,7 +7,7 @@ Well, that probably happens because of the enormous amounts of version managers,
 The solution: lazy load that stuff!!1!
 
 > [!NOTE]
-> Currently only works with [bash](https://www.gnu.org/software/bash/) and [fish](https://fishshell.com/). On support for other shells is being worked on.
+> Currently only works with [bash](https://www.gnu.org/software/bash/), [zsh](https://www.zsh.org/), and [fish](https://fishshell.com/). On support for other shells is being worked on.
 
 ## Installation
 
@@ -29,6 +29,15 @@ Now, in your *rc-file (`.config/fish/config.fish`, `.zshrc`, `.bashrc`, ...), yo
 source $(echo '
 <init commands>
 ' | lazysh bash)
+~~~
+
+
+### Zsh
+
+~~~sh
+source $(echo '
+<init commands>
+' | lazysh zsh)
 ~~~
 
 ### Fish
