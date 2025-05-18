@@ -1,4 +1,4 @@
-# Lazy.sh
+# Lazysh
 
 Ever opened your terminal and thought your shell starts slow?
 

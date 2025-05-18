@@ -42,7 +42,7 @@ func (h *LogHandler) Handle(_ context.Context, r slog.Record) error {
 	}
 	msg := r.Message
 
-	fmt.Fprintf(h.writer, "lazy.sh: %s%s\n", level, msg)
+	fmt.Fprintf(h.writer, "lazysh: %s%s\n", level, msg)
 	return nil
 }
 

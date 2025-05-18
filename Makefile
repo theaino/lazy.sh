@@ -1,4 +1,3 @@
-BUILD_TAG = devel
 ARCH ?= $(shell uname -m)
 BIN := lazysh
 DESTDIR :=
@@ -11,8 +10,6 @@ VERSION := $(shell git rev-list --count master)
 RELEASE_DIR := ${PKGNAME}_${VERSION}_${ARCH}
 PACKAGE := $(RELEASE_DIR).tar.gz
 SOURCES ?= $(shell find . -name "*.go" -type f)
-
-.PRECIOUS: ${LOCALEDIR}/%.po
 
 .PHONY: default
 default: build

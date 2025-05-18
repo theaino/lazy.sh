@@ -15,7 +15,7 @@ var sumPath string
 func loadCache() {
 	cacheDir, err := os.UserCacheDir()
 	handle(err)
-	cacheRoot = filepath.Join(cacheDir, "lazy.sh")
+	cacheRoot = filepath.Join(cacheDir, "lazysh")
 	os.MkdirAll(cacheRoot, os.ModePerm)
 
 	startPath = filepath.Join(cacheRoot, "start.fish")
