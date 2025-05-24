@@ -22,7 +22,10 @@ func NewCli() Cli {
 }
 
 func (c *Cli) Load() (err error) {
-	c.Options = ParseOptions()
+	c.Options, err = ParseOptions()
+	if err != nil {
+		return
+	}
 	c.Cache, err = cache.LoadCache(c.Options.Shell)
 	if err != nil {
 		return

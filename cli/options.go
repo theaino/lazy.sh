@@ -10,12 +10,22 @@ type Options struct {
 	Shell        shell.Shell
 }
 
-func ParseOptions() (options Options) {
+func ParseOptions() (options Options, err error) {
 	flag.BoolVar(&options.ForceAnalyze, "f", false, "force to analyze init commands")
 	flag.Parse()
 
 	flag.Parse()
-	options.setShell(flag.Arg(0))
+
+	var shellName string
+	if flag.NArg() > 0 {
+		shellName = flag.Arg(0)
+	} else {
+		shellName, err = fetchShell()
+		if err != nil {
+			return
+		}
+	}
+	options.setShell(shellName)
 
 	return
 }
